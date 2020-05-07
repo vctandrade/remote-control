@@ -1,0 +1,39 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  background-color: #2e2e2e;
+  height: 100%;
+}
+
+.vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.horizontal {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.item {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  filter: invert(100%);
+  height: 50%;
+  opacity: 1;
+  transition-duration: 1s;
+}
+
+.item:active {
+  opacity: 0.2;
+  transition-duration: 0;
+}
