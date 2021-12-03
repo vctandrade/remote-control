@@ -1,5 +1,5 @@
 use std::sync::Arc;
-use std::net::SocketAddr;
+use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 
 use enigo::{Enigo, Key, KeyboardControllable};
 use rust_embed::RustEmbed;
@@ -12,11 +12,12 @@ struct Asset;
 
 #[tokio::main]
 async fn main() {
-    let ip = local_ipaddress::get().unwrap().parse().unwrap();
-    let addr = SocketAddr::new(ip, 80);
+    let ip = local_ipaddress::get();
+    println!("Listening on http://{}", ip.unwrap());
+
+    let addr = SocketAddr::new(IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)), 80);
     let routes = get_routes();
 
-    println!("Listening on http://{}", addr);
     warp::serve(routes).run(addr).await
 }
 
