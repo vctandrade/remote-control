@@ -2,43 +2,22 @@
   "name": "remote-control",
   "version": "0.1.0",
   "description": "",
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
-  },
   "license": "MIT",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
   "dependencies": {
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.7",
-    "autoprefixer": "^9.7.6",
     "babel-preset-nano-react-app": "^0.1.0",
-    "parcel-bundler": "^1.12.4",
-    "postcss-modules": "^2.0.0"
+    "vite": "^2.6.7"
   },
   "babel": {
     "presets": [
       "nano-react-app"
-    ],
-    "plugins": [
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          "loose": true
-        }
-      ],
-      [
-        "@babel/plugin-transform-react-jsx",
-        {
-          "pragmaFrag": "React.Fragment"
-        }
-      ]
     ]
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  }
 }
